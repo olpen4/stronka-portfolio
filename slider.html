@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<html>
+	<head>
+		<meta charset="utf-8" />
+		
+		<style>
+			body
+			{
+				background-color: #222222;
+				font-size: 24px;
+				color: white;
+			}
+		</style>
+		
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.0rc1.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.0.0rc1.js"></script>
+		<script type="text/javascript">
+		
+             
+            var numer=1;
+            
+            function schowaj(){
+                $("#slider").stop(true, true).fadeOut();
+            }
+            		
+            function utworz(){
+                switch(numer){
+                    case 1:
+                         var plik = "<img width=\"900\" height=\"1273\" src=\"Materialy/material"+numer+".jpg\"/>";
+                        break;
+                    case 2:
+                         var plik = "<img width=\1276\" height=\"900\" src=\"Materialy/material"+numer+".jpg\"/>";
+                        break;
+                    default: 
+                        var plik = "<img src=\"Materialy/material"+numer+".jpg\"/>";
+                }
+                
+                document.getElementById("slider").innerHTML=plik;
+               
+                $('#slider').stop(true, true).fadeIn();
+                
+            }
+            
+             function ustawslajd(nrslajdu){
+                schowaj();
+                numer=nrslajdu;
+                utworz();    
+            }
+		</script>
+		
+	</head>
+	<body onload="utworz()">
+	<center>
+        
+        <span onclick="ustawslajd(1)" style="cursor:pointer">[1]</span>
+        <span onclick="ustawslajd(2)" style="cursor:pointer">[2]</span>
+        <span onclick="ustawslajd(3)" style="cursor:pointer">[3]</span>
+        <span onclick="ustawslajd(4)" style="cursor:pointer">[4]</span>
+        &nbsp;
+        <a style="cursor:pointer; color:white; text-decoration:none;" href="index.html">
+            <span style="cursor:pointer">[Wróć]</span>
+        </a>
+        <br /><br />
+		<div id="slider"></div>
+	 </center>  	
+	</body>
+</html>
